@@ -1,0 +1,25 @@
+# Test of the compact form of the workflow an extension carries; publishes to
+# a release of its own (compact-test), not to the nightly one.
+name: Compact workflow test
+
+on:
+  push:
+    branches: [compact-workflow-test]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      platforms:
+        description: "Platforms to build (default: all)"
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    uses: Sunderlandkyl/Slicer/.github/workflows/extension-build.yml@ci/compact-extension-workflow
+    with:
+      publish: true
+      # Only for the test, and for a fork of Slicer:
+      publish-tag: compact-test
+      extension-name: MarkupsToModel
+      slicer-repository: Sunderlandkyl/Slicer
+      slicer-ref: ci/compact-extension-workflow
