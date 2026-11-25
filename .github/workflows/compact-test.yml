@@ -14,11 +14,13 @@ jobs:
   build:
     permissions:
       contents: write
-    uses: Sunderlandkyl/Slicer/.github/workflows/extension-build.yml@ci/compact-extension-workflow
+    uses: Sunderlandkyl/Slicer/.github/workflows/extension-build.yml@ci/reduce
     with:
       publish: true
+      # Only for the test: this branch is not the default one.
+      push-branches: compact-workflow-test
       # Only for the test, and for a fork of Slicer:
       publish-tag: compact-test
       extension-name: MarkupsToModel
       slicer-repository: Sunderlandkyl/Slicer
-      slicer-ref: ci/compact-extension-workflow
+      slicer-ref: ci/reduce
