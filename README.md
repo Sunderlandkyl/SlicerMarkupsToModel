@@ -115,3 +115,4 @@ Under **Tube Properties** you can change certain aspects of the curve model's ge
 
 - **Capping**: (Under Tube Properties) Changes if the ends of the output tube should be capped.
 
+
